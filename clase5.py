@@ -26,6 +26,9 @@ class Aguila(Animal):
 
     def volar(self):
         return "estoy volando"
+    
+    def mostrar_datos(self):
+        print(f"soy un {self.tipo} y {self.volar()}")
 
 class Tipo(Enum):
     VERTEBRADO = "Vertebrado"
@@ -46,7 +49,6 @@ perro2 = Perro(4, Tipo.CANINO.value, "Carancho", Raza.PASTOR_ALEMAN.value)
 perro2.mostrar_datos()
 
 aguila1 = Aguila(2, Tipo.AVE.value)
-print(aguila1.volar())
-
+aguila1.mostrar_datos()
 aguila2 = Aguila(2, Tipo.AVE.value)
-print(aguila2.volar())
+aguila2.mostrar_datos()
