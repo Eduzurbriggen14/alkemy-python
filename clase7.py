@@ -22,9 +22,10 @@ class Fabrica:
 
     def listarInstrumentosPorTipo(self, tipoInstrumento):
         resultado = []
-        for sucursal in self.sucursales:
-            instrumentos_tipo = [instrumento for instrumento in sucursal.instrumentos if instrumento.tipo == tipoInstrumento.value]
-            resultado.extend(instrumentos_tipo)
+        for sucursal in self.sucursales:            
+            for instrumento in sucursal.instrumentos:
+                if instrumento.tipo == tipoInstrumento:
+                    resultado.append(instrumento)
         return resultado
 
     def borrarInstrumento(self, id):
@@ -90,6 +91,6 @@ for instrumento in cuerda_instrumentos:
 
 
 # Borrar instrumento con ID 'I001'
-print("\nBorrar Instrumento con ID 'I001':")
-fabrica.borrarInstrumento("I001")
+print("\nBorrar Instrumento con ID '1':")
+fabrica.borrarInstrumento("1")
 fabrica.listarInstrumentosTotales()
