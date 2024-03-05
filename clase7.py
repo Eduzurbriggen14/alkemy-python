@@ -32,8 +32,11 @@ class Fabrica:
         for sucursal in self.sucursales:
             sucursal.instrumentos = [instrumento for instrumento in sucursal.instrumentos if instrumento.id != id]
 
-    def porcInstrumentoPorTipo(self):
-        pass
+    def porcInstrumentoPorTipo(self, sucursal):
+        busqueda = None
+        for sucursal in self.sucursales:
+            if sucursal.nombre == sucursal:
+                pass
 
 class Sucursal:
     def __init__(self, nombre):
