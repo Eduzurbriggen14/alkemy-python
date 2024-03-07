@@ -1,5 +1,5 @@
 """
-URL configuration for app project.
+URL configuration for modelo project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,10 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from miapp.views import hola  # Importa tu vista desde miapp.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', hola, name='hola'),  # Incluye también la URL de hola desde miapp
-    # Otros patrones de URL...
+    path('', include('basededatos.urls'))
+
 ]
