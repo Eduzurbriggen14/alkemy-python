@@ -1,22 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <title>Index</title>
 </head>
 <body>
-    <h2>Lista de Estudiantes</h2>
+    {% include 'titulo.html'%}
     {% for estudiante in estudiantes %}
-        <h3>{{ estudiante.nombre|upper }}</h3>
-
+        <h2>{{ estudiante.nombre|upper }}</h2>
+        <h3>Cursos realizados</h3>
         {% if estudiante.cursos %}
             {% for curso in estudiante.cursos %}
-                <h5>{{ curso.titulo }} ------ {{ curso.descripcion }}</h5>
+                <h3>{{ curso.titulo }} ------ {{ curso.descripcion }}</h3>                
             {% endfor %}
+            <hr>
         {% else %}
-            <h5>No tiene cursos realizados</h5>
+            <h3>No tiene cursos realizados</h3>
+            <hr>
         {% endif %}
+        
         
     {% endfor %}
 </body>
